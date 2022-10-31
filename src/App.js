@@ -79,10 +79,10 @@ function App() {
       {/* social media */}
       <div className="w-full flex my-[30px] space-x-5 items-center justify-center">
         <div>
-          <img src={github} alt="" className='cursor-pointer' />
+         <a href="http://github.com/anie308" target="_blank" rel="noopener noreferrer"> <img src={github} alt="" className='cursor-pointer' /></a>
         </div>
         <div>
-            <img src={slack} alt=""  className='cursor-pointer'/>
+            <a href="http://" target="_blank" rel="noopener noreferrer"><img src={slack} alt=""  className='cursor-pointer'/></a>
         </div>
       </div>
 
