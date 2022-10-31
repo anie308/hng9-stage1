@@ -82,7 +82,7 @@ function App() {
       </div>
 
       {/* footer */}
-      <div className='mt-[30px] flex flex-col md:flex-row items-center justify-between w-full px-[20px] lg:p-[30px_200px] space-y-3 md:space-y-0 border-t border-['>
+      <div className='mt-[30px] flex flex-col md:flex-row items-center justify-between w-full p-[10px_20px] lg:p-[30px_200px] space-y-3 md:space-y-0 border-t border-['>
           <div className='flex-1 flex items-center justify-start w-full'>
             <img src={zuri} alt="" />
           </div>
