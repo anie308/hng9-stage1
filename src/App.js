@@ -1,6 +1,8 @@
 import React from 'react'
 import profile from './assets/profile.JPG'
 import github from './assets/github.png'
+import share from './assets/share.png'
+import dot from './assets/dot.png'
 import I4G from './assets/I4G.png'
 import slack from './assets/slack.png'
 import zuri from './assets/zuri.png'
@@ -61,7 +63,10 @@ function App() {
           <p className='hidden' id='slack'>Aniebietabasi Obo</p>
         </div>
       </div>
-
+  <div className='0 absolute top-[40px] md:top-[40px] right-[15px] md:right-[350px]' >
+    <img src={share} alt="" className='cursor-pointer hidden md:block' />
+    <img src={dot} alt="" className='cursor-pointer block md:hidden' />
+  </div>
       <div className="flex flex-col space-y-5 w-full md:w-[70%] mt-[40px] px-[20px]">
           {
             links.map(({title, link, id, text_id})=> (
@@ -84,10 +89,10 @@ function App() {
       {/* footer */}
       <div className='mt-[30px] flex flex-col md:flex-row items-center justify-between w-full p-[10px_20px] lg:p-[30px_200px] space-y-3 md:space-y-0 border-t border-['>
           <div className='flex-1 flex items-center justify-start w-full'>
-            <img src={zuri} alt="" />
+            <img src={zuri} alt="" className='h-[19px] md:h-[24px]'/>
           </div>
-          <div className='flex-2 flex items-center w-full justify-start md:justify-center font-inter text-[16px] font-[400] leading-[24px] text-center'>HNG Internship 9 Frontend Task</div>
-          <div className='flex-1 w-full flex items-center justify-start md:justify-end'><img src={I4G} alt="" /></div>
+          <div className='flex-2 flex items-center w-full justify-start md:justify-center font-inter text-[14px] md:text-[16px] font-[400] leading-[20px] md:leading-[24px] text-center'>HNG Internship 9 Frontend Task</div>
+          <div className='flex-1 w-full flex items-center justify-start md:justify-end'><img src={I4G} alt="" className='h-[24px] md:h-[32px]' /></div>
       </div>
     </div>
   );
