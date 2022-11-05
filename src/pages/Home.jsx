@@ -50,7 +50,7 @@ function Home() {
         },
       ]
       return (
-        <div className="App py-[30px] md:p-[50px]  w-full flex flex-col items-center justify-center h-full bg-[#F4F5F7]">
+        <div className="App py-[30px] md:p-[50px]  w-full flex flex-col items-center justify-center h-full bg-[#FFFFFF]">
          {/* - A profile picture with an id ‘**profile__img**’
     - Your twitter username with an id ‘**twitter**’
     - Your slack username with an id ‘**slack**’ - **but this should be hidden (available in code, but cannot be seen)** */}
