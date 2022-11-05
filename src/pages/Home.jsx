@@ -5,6 +5,7 @@ import share from '../assets/share.png'
 import dot from '../assets/dot.png'
 import slack from '../assets/slack.png'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const links = [
@@ -74,6 +75,9 @@ function Home() {
                   </div>
                 ))
               }
+          </div>
+          <div className='w-full md:w-[70%] mt-[40px] px-[20px]'>
+            <Link to='/contact' className='rounded-[8px] p-[24px_32px] bg-[#EAECF0] flex items-center justify-center w-full'>Contact Me</Link>
           </div>
           {/* social media */}
           <div className="w-full flex my-[30px] space-x-5 items-center justify-center">

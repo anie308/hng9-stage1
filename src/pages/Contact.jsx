@@ -3,17 +3,43 @@ import Footer from "../components/Footer";
 
 function Contact() {
   const [message, setMessage] = useState("");
-  const [error, setError] = useState(false)
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [messageError, setMessageError] = useState(false);
+  const [firstNameError, setFirstNameError] = useState(false);
+  const [lastNameError, setLastNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(!message.trim()){
-      setError(true)
+    
+    if(!firstName.trim()){
+      setFirstNameError(true)
       setTimeout(()=> {
-        setError(false)
+        setFirstNameError(false)
+      }, 5000)
+    }else if(!lastName.trim()){
+      setLastNameError(true)
+      setTimeout(()=> {
+        setLastNameError(false)
+      }, 5000)
+    } else if(!email.trim()){
+      setEmailError(true)
+      setTimeout(()=> {
+        setEmailError(false)
+      }, 5000)
+    } else  if(!message.trim()){
+      setMessageError(true)
+      setTimeout(()=> {
+        setMessageError(false)
       }, 5000)
     }else{
-      alert('Message Sent')
+      alert('Sent!')
     }
+
+    
+
+    
   }
   return (
     <div className="md:p-[50px]">
@@ -38,8 +64,16 @@ function Contact() {
                       
                     </div>
                     <div>
-                      <input type="text" className="border border-[#D0D5DD] w-full h-[44px] rounded-[8px] p-[10px_14px] placeholder:font-inter placeholder:text-[16px] outline-none" placeholder="Enter your first name" />
+                      <input type="text" value={firstName} onChange={(e)=>setFirstName(e.target.value) } className={`${firstNameError? 'border-[#F83F23]': 'border-[#D0D5DD] '} border border-[#D0D5DD] w-full h-[44px] rounded-[8px] p-[10px_14px] placeholder:font-inter placeholder:text-[16px] outline-none`} placeholder="Enter your first name" />
                     </div>
+                    <div>
+                        {
+                          firstNameError && (
+                            <p className="text-[#F83F23] font-[500] text-[14px] leading-[20px] font-inter">Please enter your First Name</p>
+                            
+                          )
+                        }
+                      </div>
                   </div>
                   <div>
                     {" "}
@@ -47,8 +81,16 @@ function Contact() {
                       <label htmlFor=""className="font-[500] font-inter text-[14px] leading-[20px]  ">Last name</label>
                     </div>
                     <div>
-                      <input type="text" className="border border-[#D0D5DD] w-full h-[44px] rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none" placeholder="Enter your last name" />
+                      <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className={`${lastNameError ? 'border-[#F83F23]' : 'border-[#D0D5DD]' } border  w-full h-[44px] rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none`} placeholder="Enter your last name" />
                     </div>
+                    <div>
+                        {
+                          lastNameError && (
+                            <p className="text-[#F83F23] font-[500] text-[14px] leading-[20px] font-inter">Please enter your Last Name</p>
+                            
+                          )
+                        }
+                      </div>
                   </div>
                 </div>
                 <div className="mt-[20px]">
@@ -57,19 +99,27 @@ function Contact() {
                       <label htmlFor=""className="font-[500] font-inter text-[14px] leading-[20px]">Email</label>
                     </div>
                     <div>
-                      <input type="text" className="border border-[#D0D5DD] w-full h-[44px] rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none" placeholder="yourname@email.com"/>
+                      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className={`${emailError ? 'border-[#F83F23]' : 'border-[#D0D5DD]'} border  w-full h-[44px] rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none`} placeholder="yourname@email.com"/>
                     </div>
+                    <div>
+                        {
+                          emailError && (
+                            <p className="text-[#F83F23] font-[500] text-[14px] leading-[20px] font-inter">Please enter your Email</p>
+                            
+                          )
+                        }
+                      </div>
                   </div>
                 <div className="mt-[20px]">
                     {" "}
                     <div>
-                      <label htmlFor=""className="font-[500] font-inter text-[14px] leading-[20px]">Email</label>
+                      <label htmlFor=""className="font-[500] font-inter text-[14px] leading-[20px]">Message</label>
                     </div>
                     <div>
-                      <textarea type="text" value={message} onChange={(e)=> setMessage(e.target.value)} className={`${error ? 'border-[#F83F23] ' : 'border-[#D0D5DD]'} border  w-full  rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none h-[132px]`} placeholder="Send me a message and I'll reply you as soon as possible..."/>
+                      <textarea type="text" value={message} onChange={(e)=> setMessage(e.target.value)} className={`${messageError ? 'border-[#F83F23] ' : 'border-[#D0D5DD]'} border  w-full  rounded-[8px] p-[10px_14px]  placeholder:font-inter placeholder:text-[16px] outline-none h-[132px]`} placeholder="Send me a message and I'll reply you as soon as possible..."/>
                       <div>
                         {
-                          error && (
+                          messageError && (
                             <p className="text-[#F83F23] font-[500] text-[14px] leading-[20px] font-inter">Please enter a message</p>
                             
                           )
