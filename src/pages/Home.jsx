@@ -77,7 +77,7 @@ function Home() {
               }
           </div>
           <div className='w-full md:w-[70%] mt-[40px] px-[20px]'>
-            <Link to='/contact' className='rounded-[8px] p-[24px_32px] bg-[#EAECF0] flex items-center justify-center w-full'>Contact Me</Link>
+            <Link id='contact' to='/contact' className='rounded-[8px] p-[24px_32px] bg-[#EAECF0] flex items-center justify-center w-full'>Contact Me</Link>
           </div>
           {/* social media */}
           <div className="w-full flex my-[30px] space-x-5 items-center justify-center">
